@@ -17,7 +17,7 @@ function PdfToImage() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/pdf-to-image",
+        "https://pdf-backend-5a9k.onrender.com/api/pdf-to-image",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -51,7 +51,7 @@ function PdfToImage() {
         {images.map((img, i) => (
           <img
             key={i}
-            src={`http://localhost:5000${img}`}
+            src={`https://pdf-backend-5a9k.onrender.com${img}`}
             alt="converted"
             width="200"
             style={{ margin: "10px" }}

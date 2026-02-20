@@ -9,13 +9,13 @@ export default function ImageToPdf() {
     const fd = new FormData();
     for (let f of files) fd.append("files", f);
 
-    const res = await fetch("http://localhost:5000/api/image-to-pdf", {
+    const res = await fetch("https://pdf-backend-5a9k.onrender.com/api/image-to-pdf", {
       method: "POST",
       body: fd
     });
 
     const data = await res.json();
-    setUrl("http://localhost:5000" + data.url);
+    setUrl("https://pdf-backend-5a9k.onrender.com" + data.url);
   };
 
   return (

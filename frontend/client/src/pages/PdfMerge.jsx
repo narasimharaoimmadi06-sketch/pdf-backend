@@ -9,13 +9,13 @@ export default function PdfMerge() {
     const fd = new FormData();
     for (let f of files) fd.append("files", f);
 
-    const res = await fetch("http://localhost:5000/api/pdf-merge", {
+    const res = await fetch("https://pdf-backend-5a9k.onrender.com/api/pdf-merge", {
       method: "POST",
       body: fd
     });
 
     const data = await res.json();
-    setUrl("http://localhost:5000" + data.url);
+    setUrl("https://pdf-backend-5a9k.onrender.com" + data.url);
   };
 
   return (
